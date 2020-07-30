@@ -33,6 +33,7 @@ do
     if [ "`echo $RES | grep $SEARCH_MAC`" ]; then
       echo 'Found! Raspberry pi IP is ...'
       echo $RES
+      break
     fi
   fi
 done
