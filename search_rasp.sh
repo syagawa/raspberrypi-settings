@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # < PI4
-SEARCH_MAC="b8-27-eb"
+SEARCH_MAC="b8:27:eb"
 # >= PI4
-# SEARCH_MAC="dc-a6-32"
+# SEARCH_MAC="dc:a6:32"
 
 PRE=192.168.1.
 START=0
@@ -28,7 +28,6 @@ do
   IP=$PRE$i
   ping -w 100 -c 1 $IP
   if [ "$?" = "0" ]; then
-    echo atta $IP
     RES=`arp -a $IP`
     if [ "`echo $RES | grep $SEARCH_MAC`" ]; then
       echo 'Found! Raspberry pi IP is ...'
