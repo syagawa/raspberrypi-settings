@@ -26,7 +26,7 @@ echo start searching
 for i in `seq $START 1 $END`
 do
   IP=$PRE$i
-  ping -w 100 -c 1 $IP
+  ping -c 1 $IP
   if [ "$?" = "0" ]; then
     RES=`arp -a $IP`
     if [ "`echo $RES | grep $SEARCH_MAC`" ]; then
