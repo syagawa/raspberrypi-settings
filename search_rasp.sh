@@ -28,6 +28,7 @@ do
   IP=$PRE$i
   ping -c 1 $IP
   if [ "$?" = "0" ]; then
+    echo 'Found device, check MAC address.'
     RES=`arp -a $IP`
     if [ "`echo $RES | grep $SEARCH_MAC`" ]; then
       echo 'Found! Raspberry pi IP is ...'
